@@ -15,11 +15,26 @@ class Solution:
 				nums_dict[num] =  i
 			else:
 				return [nums_dict[n], i]
-		# for i in range(len(nums)):
-		# 	for j in range(len(nums) - i - 1):
-		# 		if nums[i] + nums[i + j + 1] == target: return [i, i + j + 1]
+
+	# problem 7
+	def reverse(self, x):
+		"""
+		:type x: int
+		:rtype: int
+		"""
+		if x > 0: x_str = str(x)
+		else: x_str = str(-x)
+		x_str_r = x_str[::-1]
+		if x > 0: result = int(x_str_r)
+		else: result = -int(x_str_r)
+		if (-1 << 31) < result < ((1 << 31)-1): return result
+		else: return 0
 
 if __name__ == "__main__":	
 	sol = Solution()
+	# problem 1
 	output = sol.twoSum([2, 7, 11, 15], 26)
+	print(output)
+	# problem 7
+	output = sol.reverse(1534236469)
 	print(output)
