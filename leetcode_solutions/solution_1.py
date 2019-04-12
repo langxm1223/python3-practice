@@ -30,6 +30,16 @@ class Solution:
 		if (-1 << 31) < result < ((1 << 31)-1): return result
 		else: return 0
 
+	# problem 9
+	def isPalindrome(self, x):
+		"""
+		:type x:int
+		:rtype: bool
+		"""
+		if x < 0: return False
+		elif str(x) == str(x)[::-1]: return True
+		else: return False
+
 if __name__ == "__main__":	
 	sol = Solution()
 	# problem 1
@@ -37,4 +47,7 @@ if __name__ == "__main__":
 	print(output)
 	# problem 7
 	output = sol.reverse(1534236469)
+	print(output)
+	# problem 9
+	output = sol.isPalindrome(153)
 	print(output)
