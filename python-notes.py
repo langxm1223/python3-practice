@@ -58,3 +58,5 @@ def tag(name):
 
 with tag("h1"):
 	print("hello, world")
+
+# 9. list.append() does not have return, list would be replaced by the new list

@@ -40,6 +40,21 @@ class Solution:
 		elif str(x) == str(x)[::-1]: return True
 		else: return False
 
+	def romanToInt(self, s):
+		"""
+		:type s: str
+		:rtype: int
+		"""
+		roman_dict = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+		result = 0
+		if len(s) == 1: return roman_dict[s]
+		else:
+			for i in range(len(s)-1):
+				if roman_dict[s[i]] < roman_dict[s[i+1]]: result += -roman_dict[s[i]]
+				else: result += roman_dict[s[i]]
+		return result + roman_dict[s[-1]]
+
+
 if __name__ == "__main__":	
 	sol = Solution()
 	# problem 1
@@ -50,4 +65,7 @@ if __name__ == "__main__":
 	print(output)
 	# problem 9
 	output = sol.isPalindrome(153)
+	print(output)
+	# problem 13
+	output = sol.romanToInt("MCMXCIV")
 	print(output)
