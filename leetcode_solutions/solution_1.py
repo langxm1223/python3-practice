@@ -40,6 +40,7 @@ class Solution:
 		elif str(x) == str(x)[::-1]: return True
 		else: return False
 
+	# problem 13
 	def romanToInt(self, s):
 		"""
 		:type s: str
@@ -54,6 +55,20 @@ class Solution:
 				else: result += roman_dict[s[i]]
 		return result + roman_dict[s[-1]]
 
+	# problem 14
+	def longestCommonPrefix(self, strs):
+		"""
+		:type strs: List[str]
+		:rtype: str
+		"""
+		result = ""
+		if len(strs) > 0:
+			for i in range(len(strs[0])):
+				str_check = strs[0][0:i+1]
+				for word in strs:
+					if len(word) < len(str_check) or str_check != word[0:i+1] : return result
+				result = str_check
+		return result
 
 if __name__ == "__main__":	
 	sol = Solution()
@@ -68,4 +83,7 @@ if __name__ == "__main__":
 	print(output)
 	# problem 13
 	output = sol.romanToInt("MCMXCIV")
+	print(output)
+	# problem 14
+	output = sol.longestCommonPrefix(["a"])
 	print(output)
