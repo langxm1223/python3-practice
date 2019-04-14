@@ -70,6 +70,12 @@ class Solution:
 				result = str_check
 		return result
 
+	# problem 20
+	def isValid(self, s: str) -> bool:
+		while "()" in s or "{}" in s or '[]' in s:
+			s = s.replace("()", "").replace('{}', "").replace('[]', "")
+		return s == ''
+
 if __name__ == "__main__":	
 	sol = Solution()
 	# problem 1
@@ -86,4 +92,7 @@ if __name__ == "__main__":
 	print(output)
 	# problem 14
 	output = sol.longestCommonPrefix(["a"])
+	print(output)
+	# problem 20
+	output = sol.isValid("]")
 	print(output)
