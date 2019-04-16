@@ -27,8 +27,8 @@ ALL = W+N+E+S
 
 
 def usage():
-		print("---- usage ----")
-		print("./parser_gui.py")
+	print("---- usage ----")
+	print("./parser_gui.py")
 
 
 def print_stats(data_label, data):

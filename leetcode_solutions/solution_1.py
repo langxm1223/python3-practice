@@ -76,6 +76,22 @@ class Solution:
 			s = s.replace("()", "").replace('{}', "").replace('[]', "")
 		return s == ''
 
+	# problem 21
+	# skipped because of the singly-linked list
+
+	# problem 26
+	def removeDuplicates(self, nums):
+		"""
+		:type nums: List[int]
+		:rtype: int
+		"""
+		i = 0
+		while i < len(nums)-1:
+			if nums[i] == nums[i+1]: del nums[i]
+			else: i += 1
+		return len(nums)
+
+
 if __name__ == "__main__":	
 	sol = Solution()
 	# problem 1
@@ -95,4 +111,7 @@ if __name__ == "__main__":
 	print(output)
 	# problem 20
 	output = sol.isValid("]")
+	print(output)
+	# problem 26
+	output = sol.removeDuplicates([1, 1, 2])
 	print(output)
